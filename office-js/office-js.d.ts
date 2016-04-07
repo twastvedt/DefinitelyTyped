@@ -10679,7 +10679,7 @@ declare namespace Office {
             normalizedSubject: string;
             sender: Office.EmailAddressDetails;
             subject: string;
-            to: Office.EmailAddressDetails;
+            to: Office.EmailAddressDetails[];
             /**
              * Displays a reply form that includes the sender and all the recipients of the selected message
              * @param htmlBody A string that contains text and HTML and that represents the body of the reply form. The string is limited to 32 KB
