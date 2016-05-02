@@ -10673,6 +10673,7 @@ declare namespace Office {
             removeAttachmentAsync(attachmentIndex: string, option?: any, callback?: (result: AsyncResult) => void): void;
         }
         export interface MessageRead extends Office.Message {
+            body: Office.Body;
             cc: Office.EmailAddressDetails[];
             from: Office.EmailAddressDetails;
             internetMessageId: string;
@@ -10883,6 +10884,13 @@ declare namespace Office {
     export interface Appointment extends Item {
     }
     export interface Body {
+        /**
+         * This method returns the entire current body in the format specified by coercionType.
+         * @param coercionType The format for the returned body.
+         * @param options An object literal that contains one or more of the following properties: [asyncContext Object <optional>]
+         * @param callback The body is provided in the requested format in the asyncResult.value property.
+        */
+        getAsync(coercionType: Office.CoercionType, options?: Object, callback?: {(asyncResult: AsyncResult): any}): void;
         /**
          * Gets a value that indicates whether the content is in HTML or text format
          * @param tableData  A TableData object with the headers and rows
