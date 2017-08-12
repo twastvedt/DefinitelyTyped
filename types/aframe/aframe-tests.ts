@@ -39,7 +39,21 @@ entity.addEventListener('child-detached', (event) => {
 });
 
 // Components
-const Component = AFRAME.registerComponent('test', {});
+const Component = AFRAME.registerComponent('test', {
+	schema: {
+		myProperty: {
+			default: [],
+			parse: function () { },
+		},
+		string: { type: 'string' }
+	},
+	init: function () {},
+	update: function () {},
+	tick: function () {},
+	remove: function () {},
+	pause: function () {},
+	play: function () {}
+});
 
 // Scene
 
